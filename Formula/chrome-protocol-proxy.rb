@@ -7,19 +7,19 @@ class ChromeProtocolProxy < Formula
 
   if OS.mac?
     url "https://github.com/wendigo/chrome-protocol-proxy/releases/download/v0.5.2/chrome-protocol-proxy_0.5.2_macos_x86_64.tar.gz"
-    sha256 "11d8f6369e818cb23328fc752406b0d464854540e525da1d416bf47ec0ccbf51"
+    sha256 "0f11e3a1de4a148e24341b4beb9fce7d87fa4b2270f1e647672458c675ff575a"
   elsif OS.linux?
     if Hardware::CPU.intel?
       url "https://github.com/wendigo/chrome-protocol-proxy/releases/download/v0.5.2/chrome-protocol-proxy_0.5.2_linux_x86_64.tar.gz"
-      sha256 "ca7844941c0c92e59c333b2c2a28ccede8cd360ace0c25d721d07ca298259657"
+      sha256 "7d5c6470151d591ebbb6feb77335a52c2b5f77f835d50a35d35f2f858c3bbbcf"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
         url "https://github.com/wendigo/chrome-protocol-proxy/releases/download/v0.5.2/chrome-protocol-proxy_0.5.2_linux_arm64.tar.gz"
-        sha256 "6a067dfd8a1b5b1ae9305a0bb5babb0a58447c9c29163140ff19fd03f0386f78"
+        sha256 "efc41a7ab8f65434936dd441e228fbc96f772e3992a8f43e8596bb61ffa2fe9a"
       else
         url "https://github.com/wendigo/chrome-protocol-proxy/releases/download/v0.5.2/chrome-protocol-proxy_0.5.2_linux_armv6.tar.gz"
-        sha256 "61124cfec58368417e08ff1aca8ee0ca4f41cbcfdb4b224ea852ff22e00089d6"
+        sha256 "a61d3fc75c823e22d151bb47b08d1070c9f01efd18e319237b9d68c956236e95"
       end
     end
   end
