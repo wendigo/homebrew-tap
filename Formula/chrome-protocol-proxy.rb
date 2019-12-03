@@ -2,24 +2,24 @@
 class ChromeProtocolProxy < Formula
   desc "chrome-protocol-proxy is small reverse websocket proxy designed for chrome debugging protocol. It's purpose is to capture messages written to and received from Chrome Debugging Protocol, coalesce requests with responses, unpack messages from Target domain and provide easy to read, colored output."
   homepage "https://github.com/wendigo/chrome-protocol-proxy"
-  version "0.5.1"
+  version "0.5.2"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/wendigo/chrome-protocol-proxy/releases/download/v0.5.1/chrome-protocol-proxy_0.5.1_macos_x86_64.tar.gz"
-    sha256 "2da8f754ee5df5d85e9b4f8f4d57c56099f629b087e2dce4f4f315a21ad0e875"
+    url "https://github.com/wendigo/chrome-protocol-proxy/releases/download/v0.5.2/chrome-protocol-proxy_0.5.2_macos_x86_64.tar.gz"
+    sha256 "11d8f6369e818cb23328fc752406b0d464854540e525da1d416bf47ec0ccbf51"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/wendigo/chrome-protocol-proxy/releases/download/v0.5.1/chrome-protocol-proxy_0.5.1_linux_x86_64.tar.gz"
-      sha256 "0cd7b4f8bb40be09e094dacfb62a9040bcc9b9f64520a53d2036087f0dda7067"
+      url "https://github.com/wendigo/chrome-protocol-proxy/releases/download/v0.5.2/chrome-protocol-proxy_0.5.2_linux_x86_64.tar.gz"
+      sha256 "ca7844941c0c92e59c333b2c2a28ccede8cd360ace0c25d721d07ca298259657"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/wendigo/chrome-protocol-proxy/releases/download/v0.5.1/chrome-protocol-proxy_0.5.1_linux_arm64.tar.gz"
-        sha256 "34b44cf02cb1733e1a604516af5b6a0885c99cc730a914939d14dce083eb9c02"
+        url "https://github.com/wendigo/chrome-protocol-proxy/releases/download/v0.5.2/chrome-protocol-proxy_0.5.2_linux_arm64.tar.gz"
+        sha256 "6a067dfd8a1b5b1ae9305a0bb5babb0a58447c9c29163140ff19fd03f0386f78"
       else
-        url "https://github.com/wendigo/chrome-protocol-proxy/releases/download/v0.5.1/chrome-protocol-proxy_0.5.1_linux_armv6.tar.gz"
-        sha256 "233f99343191bc621d1ec05a7b6fc3e7198b5a0ab2d5b066b9c1695f8a466e69"
+        url "https://github.com/wendigo/chrome-protocol-proxy/releases/download/v0.5.2/chrome-protocol-proxy_0.5.2_linux_armv6.tar.gz"
+        sha256 "61124cfec58368417e08ff1aca8ee0ca4f41cbcfdb4b224ea852ff22e00089d6"
       end
     end
   end
