@@ -5,20 +5,20 @@
 class ChromeProtocolProxy < Formula
   desc "chrome-protocol-proxy is small reverse websocket proxy designed for chrome debugging protocol. It's purpose is to capture messages written to and received from Chrome Debugging Protocol, coalesce requests with responses, unpack messages from Target domain and provide easy to read, colored output."
   homepage "https://github.com/wendigo/chrome-protocol-proxy"
-  version "0.5.8"
+  version "0.6.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/wendigo/chrome-protocol-proxy/releases/download/v0.5.8/chrome-protocol-proxy_0.5.8_macos_x86_64.tar.gz"
-      sha256 "aafd929c3963d2da9d458eb70de4acf6de9c511c5ff197a744e1a885c0dfc5fc"
+      url "https://github.com/wendigo/chrome-protocol-proxy/releases/download/v0.6.0/chrome-protocol-proxy_0.6.0_darwin_amd64.tar.gz"
+      sha256 "819a61d33d66bdab59c46c83a72f51eef6e5df2af3210520bc8b52466ee460c7"
 
       def install
         bin.install "chrome-protocol-proxy"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/wendigo/chrome-protocol-proxy/releases/download/v0.5.8/chrome-protocol-proxy_0.5.8_macos_arm64.tar.gz"
-      sha256 "379e5860fae7b5d7d79fa19966320a9b9f72ce81be151b6424b86abb194a4396"
+      url "https://github.com/wendigo/chrome-protocol-proxy/releases/download/v0.6.0/chrome-protocol-proxy_0.6.0_darwin_arm64.tar.gz"
+      sha256 "bca3e6e45fe6194d437f4046831288bc6ed576f58b80bed203bccf80f2d697ed"
 
       def install
         bin.install "chrome-protocol-proxy"
@@ -28,27 +28,33 @@ class ChromeProtocolProxy < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/wendigo/chrome-protocol-proxy/releases/download/v0.5.8/chrome-protocol-proxy_0.5.8_linux_x86_64.tar.gz"
-      sha256 "0e8204ef61e567f39432d1d0c8f4424509584df96707939e605579f776f478a5"
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/wendigo/chrome-protocol-proxy/releases/download/v0.6.0/chrome-protocol-proxy_0.6.0_linux_amd64.tar.gz"
+        sha256 "e860f5971ff5d363ad527991530e58f36c67956576b8d1fce14a6f136a0d2f6e"
 
-      def install
-        bin.install "chrome-protocol-proxy"
+        def install
+          bin.install "chrome-protocol-proxy"
+        end
       end
     end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/wendigo/chrome-protocol-proxy/releases/download/v0.5.8/chrome-protocol-proxy_0.5.8_linux_armv6.tar.gz"
-      sha256 "5b1ef76b891c9e053f4e1430fe464e543d3d82a35a830b2b2812de4a00df3659"
+    if Hardware::CPU.arm?
+      if !Hardware::CPU.is_64_bit?
+        url "https://github.com/wendigo/chrome-protocol-proxy/releases/download/v0.6.0/chrome-protocol-proxy_0.6.0_linux_armv6.tar.gz"
+        sha256 "5116fafa84ead81c144d5db5d3220cb4cc996d6ad38401ee21dcc53dc0eedf0a"
 
-      def install
-        bin.install "chrome-protocol-proxy"
+        def install
+          bin.install "chrome-protocol-proxy"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/wendigo/chrome-protocol-proxy/releases/download/v0.5.8/chrome-protocol-proxy_0.5.8_linux_arm64.tar.gz"
-      sha256 "d84cad7cf4222a5175c748d2bcef0aa037a551639cc3abedd9930d7afdec8e9f"
+    if Hardware::CPU.arm?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/wendigo/chrome-protocol-proxy/releases/download/v0.6.0/chrome-protocol-proxy_0.6.0_linux_arm64.tar.gz"
+        sha256 "4e8e9dbc13dc7c431d625e91b7ff76b9ab73345106bf377a13db50a4e6ccc6b9"
 
-      def install
-        bin.install "chrome-protocol-proxy"
+        def install
+          bin.install "chrome-protocol-proxy"
+        end
       end
     end
   end
